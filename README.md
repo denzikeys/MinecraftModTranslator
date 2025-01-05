@@ -56,12 +56,6 @@ MinecraftModTranslator/
 │   ├── filter_mods.py
 │   ├── complete_translation.py
 │   └── complete_translation_backup.py
-├── in/
-├── jar_ru/
-├── data/
-│   ├── json/
-│   └── ru/
-├── full/
 ├── README.md
 └── requirements.txt
 ```
