@@ -32,70 +32,38 @@ A tool to translate Minecraft mods into Russian using Google Translate API.
 
 ## Usage
 
-1. Place your `.jar` files in the `in` directory.
-2. Run the main script to translate mods:
+1. Run the script to create the necessary directories:
    ```sh
-   python src/translate_mods.py
+   python translator.py
    ```
-3. Run the filter script to sort mods based on file presence:
-   ```sh
-   python src/filter_mods.py
-   ```
-4. Run the completion script to finalize the translation process:
-   ```sh
-   python src/complete_translation.py
-   ```
-5. Follow the on-screen instructions.
+2. Place your `.jar` files in the `in` directory.
+3. With the script running, press any key to start the processing.
+4. The script will process the `.jar` files:
+   - Files that already have Russian localization or do not need localization will be moved to the `full` directory.
+   - Translated files will be moved to the `jar_ru` directory.
 
 ## Directory Structure
 
 ```
 MinecraftModTranslator/
-├── src/
-│   ├── translate_mods.py
-│   ├── filter_mods.py
-│   ├── complete_translation.py
-│   └── complete_translation_backup.py
+├── translator.py
+├── in/
+├── jar_ru/
+├── data/
+├── full/
 ├── README.md
 └── requirements.txt
 ```
 
 ## File Descriptions
 
-### `translate_mods.py`
+### `translator.py`
 
-**Description**: Main script for translating mods. Includes functions for unpacking and packing JAR files, translating text, creating directories, reading and writing JSON files.
-
-**Usage**:
-```sh
-python src/translate_mods.py
-```
-
-### `filter_mods.py`
-
-**Description**: Script for filtering mods based on the presence of specific files in JAR archives. Moves mods to appropriate directories based on the presence of `en_us.json` and `ru_ru.json` files.
+**Description**: Main script for translating mods. Includes functions for unpacking and packing JAR files, translating text, creating directories, reading and writing JSON files, and processing JAR files based on the presence of specific files.
 
 **Usage**:
 ```sh
-python src/filter_mods.py
-```
-
-### `complete_translation.py`
-
-**Description**: Script for completing the translation process. Includes functions for unpacking and packing JAR files, translating text, creating directories, reading and writing JSON files, and processing JAR files based on the presence of specific files.
-
-**Usage**:
-```sh
-python src/complete_translation.py
-```
-
-### `complete_translation_backup.py`
-
-**Description**: Backup copy of the completion script. Includes the same functions as `complete_translation.py` and can be used for testing or as a backup.
-
-**Usage**:
-```sh
-python src/complete_translation_backup.py
+python translator.py
 ```
 
 ## Contributing
@@ -105,3 +73,81 @@ Contributions are welcome! Please open an issue or submit a pull request.
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+# MinecraftModTranslator
+
+Инструмент для перевода модов Minecraft на русский язык с использованием Google Translate API.
+
+## Функции
+
+- Извлекает `.jar` файлы и обрабатывает `en_us.json` файлы.
+- Переводит текст с английского на русский.
+- Создает новые `ru_ru.json` файлы с переведенным текстом.
+- Упаковывает `.jar` файлы с переведенными JSON файлами.
+- Фильтрует моды на основе наличия определенных файлов.
+
+## Требования
+
+- Python 3.x
+- Библиотека Requests (`pip install requests`)
+
+## Установка
+
+1. Клонируйте репозиторий:
+   ```sh
+   git clone https://github.com/ВашеИмяПользователя/MinecraftModTranslator.git
+   ```
+2. Перейдите в директорию репозитория:
+   ```sh
+   cd MinecraftModTranslator
+   ```
+3. Установите необходимые зависимости:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+## Использование
+
+1. Запустите скрипт для создания необходимых директорий:
+   ```sh
+   python translator.py
+   ```
+2. Поместите ваши `.jar` файлы в директорию `in`.
+3. С запущенным скриптом нажмите любую клавишу для начала обработки.
+4. Скрипт обработает `.jar` файлы:
+   - Файлы, которые уже имеют русскую локализацию или не нуждаются в локализации, будут перемещены в директорию `full`.
+   - Переведенные файлы будут перемещены в директорию `jar_ru`.
+
+## Структура директорий
+
+```
+MinecraftModTranslator/
+├── translator.py
+├── in/
+├── jar_ru/
+├── data/
+├── full/
+├── README.md
+└── requirements.txt
+```
+
+## Описание файлов
+
+### `translator.py`
+
+**Описание**: Основной скрипт для перевода модов. Включает функции для распаковки и упаковки JAR файлов, перевода текста, создания директорий, чтения и записи JSON файлов, а также обработки JAR файлов на основе наличия определенных файлов.
+
+**Использование**:
+```sh
+python translator.py
+```
+
+## Вклад
+
+Вклад приветствуется! Пожалуйста, откройте issue или отправьте pull request.
+
+## Лицензия
+
+Этот проект лицензирован под лицензией MIT. Подробности смотрите в файле [LICENSE](LICENSE).
