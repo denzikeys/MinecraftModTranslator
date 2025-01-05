@@ -1,6 +1,3 @@
-Конечно! Вот обновленный `README.md` с инструкцией и описанием для каждого файла:
-
-```markdown
 # MinecraftModTranslator
 
 A tool to translate Minecraft mods into Russian using Google Translate API.
@@ -114,6 +111,3 @@ Contributions are welcome! Please open an issue or submit a pull request.
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
-
-Этот `README.md` файл содержит все необходимые инструкции и описания для использования вашего проекта, а также описание каждого файла и его функционала.
